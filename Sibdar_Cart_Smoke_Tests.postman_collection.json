@@ -57,14 +57,13 @@
 					"raw": "{\r\n    \"idCookie\": \"736599\",\r\n    \"idProd\": 178,\r\n    \"type\": \"plus\"\r\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/api/cart/123",
+					"raw": "{{base_url}}/ajax/basketOrder.php",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
-						"api",
-						"cart",
-						"123"
+						"ajax",
+						"basketOrder.php"
 					]
 				}
 			},
@@ -107,6 +106,15 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCookie\": \"736599\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{base_url}}/ajax/basketList.php",
 					"host": [
@@ -121,22 +129,32 @@
 			"response": []
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "base_url",
 			"value": "https://www.sibdar-spb.ru"
-		},
-		{
-			"key": "user_email",
-			"value": "test@example.com"
-		},
-		{
-			"key": "user_password",
-			"value": "password123"
-		},
-		{
-			"key": "auth_token",
-			"value": ""
 		}
 	]
 }
